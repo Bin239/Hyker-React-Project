@@ -1,3 +1,16 @@
+
+.navbar {
+    background-Color : rgb(91, 219, 155);
+    display: block;
+    color: #fff;
+   
+}
+
+.logo {
+  padding-top: 50px
+}
+
+
 body {
   margin: 0;
   padding: 0;
