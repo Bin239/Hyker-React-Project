@@ -43,7 +43,7 @@ getTrails = async () => {
     render (){
         return (
             <div>
-                <trails/>
+                Trails
             </div>
         )
     }

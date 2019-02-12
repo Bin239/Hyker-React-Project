@@ -3,33 +3,18 @@ import './App.css';
 import GoogleApiWrapper from "./Map/Map";
 import UserInput from "./Userinput/userInput";
 import Trails from "./Trails/Trails"
+import Navbar from "./Navbar/Navbar"
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <header>
-        <table className ="navbar">
-        <head>
-          <tr>
-            <td>
-              <img className = "logo " alt = "Hiker Icon" width = "80" src = "logo1.png"/>
-            </td>
-          </tr>
-          <h2 className = "title">Hyker</h2>
-        </head>
-        </table>
-      </header>
-        
-
-      <body>
+        <Navbar/>
         <Trails/>
-      </body>
-      
-        
-      
-  </div>
+        <UserInput/>
+        <GoogleApiWrapper/>
+      </div>
     )}
 }
 
