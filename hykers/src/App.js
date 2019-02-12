@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import GoogleApiWrapper from "./Map/Map"
+import GoogleApiWrapper from "./Map/Map";
+import UserInput from "./Userinput/userInput";
+import Trails from "./Trails/Trails"
+
 
 class App extends Component {
   render() {
@@ -21,7 +24,7 @@ class App extends Component {
         
 
       <body>
-        <GoogleApiWrapper/>
+        <Trails/>
       </body>
       
         

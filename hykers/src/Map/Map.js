@@ -10,7 +10,7 @@ const mapStyles = {
 const trails = [
     ["Washing Park", 39.7008,-104.9712 ,1 ],
     ["Cherry Creek Bike Path",39.7156 ,-104.96630 ,2 ],
-    ["Cherry Creek Path", 39.6222, -104.8402, 3],
+    ["Cherry Creek Park", 39.6222, -104.8402, 3],
     ["Bear Creek Lake", 39.650302,-105.137616,4 ],
     ["Green Mountain Trail", 39.687021,-105.155095, 5 ],
     ["Lookout Mountain Trail",39.731522,-105.239132 ,6 ],
@@ -25,6 +25,16 @@ const trails = [
     ["Red Rocks Park",39.664135,-105.204540, 15],
     ["Garden of the gods park", 38.864422,-104.892021,16 ]
 ]
+
+for(let i = 0; i < trails.length; i++){
+    const trail = trails[i];
+    const marker = new Marker({
+        position : {lat: trail[1], lng: trail[2]},
+        icon: Image,
+        title: trail[0],
+        zIndex: trail[3]
+    })
+}
 
 
 class MapContainer extends Component {
@@ -50,7 +60,6 @@ class MapContainer extends Component {
            })
        }
    }
-
 
 
     render (){
