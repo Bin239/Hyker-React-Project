@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import GoogleApiWrapper from "./Map/Map";
-import UserInput from "./Userinput/userInput";
+import Search from "./Search/search";
 import Trails from "./Trails/Trails"
 import Navbar from "./Navbar/Navbar"
+import ChatContainer from './UserChat/ChatContainer';
+import UsernameForm from './UserChat/Username';
+
 
 
 class App extends Component {
@@ -11,9 +14,11 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar/>
-        <Trails/>
-        <UserInput/>
+        <Search/>
         <GoogleApiWrapper/>
+        <ChatContainer/>
+        <Trails/>
+        <UsernameForm/>
       </div>
     )}
 }

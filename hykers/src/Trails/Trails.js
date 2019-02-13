@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+//import { runInThisContext } from "vm";
 
 class Trails extends Component {
         constructor(){
@@ -23,27 +24,40 @@ getTrails = async () => {
             throw Error(response.statusText);
         }
 
+        
         const trailsParsed = await response.json();
         
-        
+        trailsParsed.trails.forEach(trail => {
+            console.log (trail.name)
+        });
+        console.log(trailsParsed.trails[3].name)
 
         this.setState({
-            trails: trailsParsed.data,
-
+            trails: trailsParsed.trails,
+            
         })
-        
-        console.log(this.trails[1].name);
+
     } catch (err){
         return err
     }
 }
 
 
-
     render (){
+
+        const trailList = this.state.trails.map((trail) => 
+        <li key = {trail.id}><h4>{trail.name}</h4></li>
+        )
+
+
         return (
             <div>
-                Trails
+                <h2>Trails</h2>
+                
+               <ul>
+                  <li>{trailList}</li> 
+               </ul>
+                 
             </div>
         )
     }

@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 import {Map, GoogleApiWrapper, InfoWindow, Marker} from "google-maps-react";
 
+
+
+
 const mapStyles = {
-  width: "100%",
-  height: "100%",
-  marginRight: "200px"
+  width: "60%",
+  height: "75%",
 };
 
 const trails = [
@@ -26,45 +28,57 @@ const trails = [
     ["Garden of the gods park", 38.864422,-104.892021,16 ]
 ]
 
+console.log(trails[1][1], trails[1][2])
 for(let i = 0; i < trails.length; i++){
-    const trail = trails[i];
-    const marker = new Marker({
-        position : {lat: trail[1], lng: trail[2]},
+    var marker = new Marker({
+        position : {lat: trails[i][1], lng: trails[i][2]},
+        map: Map,
         icon: Image,
-        title: trail[0],
-        zIndex: trail[3]
+        title: trails[i][0],
     })
 }
 
 
+
 class MapContainer extends Component {
-    state = {
-        showingInfoWindow : false,
-        activeMarker : {},
-        selectedPlace: {}
-    }
 
-   onMarkerClick = (props, marker, e) =>{
-       this.setState({
-           selectedPlace: props,
-           activeMarker: marker,
-           showingInfoWindow: true
-       })
-   }
+    constructor(props){
+            super(props);
+            this.state ={
+                marker: marker,
+                showingInfoWindow : false,
+            }
+        }
 
-   onClose = props => {
-       if(this.state.showingInfoWindow){
-           this.setState({
-               showingInfoWindow: false,
-               activeMarker: null
-           })
-       }
-   }
+        // componentDidMount(){
+        //     this.setState({
+        //         marker: marker
+        //     })
+        // }
+    
+    
+//    onMarkerClick = (props, marker, e) =>{
+//        this.setState({
+//            selectedPlace: props,
+//            activeMarker: marker,
+//            showingInfoWindow: true
+//        })
+//    }
+
+//    onClose = props => {
+//        if(this.state.showingInfoWindow){
+//            this.setState({
+//                showingInfoWindow: false,
+//                activeMarker: null
+//            })
+//        }
+//    }
 
 
     render (){
         return (
-            <Map 
+            
+            <Map className = "map"
                 google = {this.props.google}
                 zoom = {10}
                 style = {mapStyles}
@@ -72,7 +86,12 @@ class MapContainer extends Component {
                     lat :39.7392,
                     lng: -104.9903
                 }}
-                />
+                
+             />
+            
+               
+    
+            
         )
     }
 }

@@ -2,8 +2,27 @@
   text-align: center;
 }
 
+body {
+  background-color: #8ac7d8
+}
+.map {
+  margin-top : 20px
+}
+.chatspace {
+  height: 30px;
+  width: 100%;
+  margin-top: 80%
+}
+
 .searchfield {
-  width: 80%
+  width: 99%
+
+}
+
+.navbar {
+  background-image: url ("SiteSunset1.jpg");
+  background-repeat: round
+
 }
 
 .App-logo {
