@@ -29,7 +29,7 @@ body {
 .traillist{
   float: right;
   border: #282c34;
-  border-width: 10px
+  margin-left: 50%
 }
 
 .navbar {
