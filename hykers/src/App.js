@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import GoogleApiWrapper from "./Map/Map";
-import Navbar from "./Navbar/Navbar"
-import Login from "./Login/Login"
+import Navbar from "./Navbar/Navbar";
+import AddTrail from "./AddTrail/AddTrail"
+
 //import {BrowserRouter} from "react-router-dom";
 //import Route from "react-router-dom/Route"
 
@@ -25,7 +26,9 @@ StartPage = (props) => {
     </div>
   )
 }
-    return <Login/>
+  return(
+    <h2>Please Log In</h2>
+  )
 }
 
   render() {
