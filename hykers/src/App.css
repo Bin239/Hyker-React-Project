@@ -6,7 +6,9 @@ body {
   background-color: #8ac7d8
 }
 .map {
-  margin-top : 20px
+  margin-top : 20px;
+  display: block
+  
 }
 .chatspace {
   height: 30px;
