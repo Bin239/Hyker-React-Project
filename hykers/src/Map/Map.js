@@ -27,7 +27,7 @@ class MapContainer extends Component {
 
     clickSearch = () => {
         this.setState({
-
+            
         })
     }
 
