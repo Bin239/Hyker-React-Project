@@ -18,6 +18,19 @@ body {
   width: 99%
 
 }
+.wrapper {
+  display: flex
+}
+.maps {
+  display: 0 0 50%
+}
+
+
+.traillist{
+  float: right;
+  border: #282c34;
+  border-width: 10px
+}
 
 .navbar {
   background-image: url ("SiteSunset1.jpg");
