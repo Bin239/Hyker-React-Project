@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AddTrail from "../AddTrail/AddTrail"
-import TrailList from "../TrailList/Trails"
+import Trails from "../TrailList/Trails"
 import { Map, GoogleApiWrapper } from "google-maps-react";
 import EditTrail from "../EditTrail/EditTrail";
 
@@ -45,7 +45,7 @@ class MapContainer extends Component {
     closeModelAndUpdate = async (e) => {
         e.preventDefault();
         try{
-            const response = await fetch ("http://localhost:9000/api/v1/trails/" + this.state.trailToEdit._id, {
+            const response = await fetch ("http://localhost:9000/api/v1/trails" + this.state.trailToEdit._id, {
                 method : "PUT",
                 credentials: "include",
                 body: JSON.stringify(this.state.trailToEdit),
@@ -188,7 +188,7 @@ class MapContainer extends Component {
                         lng: -104.9903
                     } 
             } />                 */}
-                <TrailList trails = {this.state.trails} deleteTrail={this.deleteTrail} showModal = {this.showModal}/>
+                <Trails trails = {this.state.trails} deleteTrail={this.deleteTrail} showModal = {this.showModal}/>
                 {this.state.showModal ? <EditTrail handleEditFormInput = {this.handleEditFormInput} trailToEdit={this.state.trailToEdit} closeModelAndUpdate={this.closeModelAndUpdate}/> : null }
                 <AddTrail addTrail = {this.addTrail}/>
             </div>

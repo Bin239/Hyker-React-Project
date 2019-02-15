@@ -3,7 +3,8 @@
 }
 
 body {
-  background-color: #8ac7d8
+  background-image: url("trail.jpg");
+  background-size: cover
 }
 .map {
   margin-top : 50px;
@@ -21,7 +22,10 @@ body {
 
 
 .traillist{
-  float: right;
+  color:rgb(56, 27, 216);
+  font-size: 20px;
+  text-shadow: #282c34 3px;
+  
   display: block
 }
 
