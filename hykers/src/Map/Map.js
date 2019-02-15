@@ -6,10 +6,11 @@ import EditTrail from "../EditTrail/EditTrail";
 
 
 const mapStyles = {
-    width: "50%",
+    width: "90%",
     height: "65%",
-    display: "block",
-    marginLeft: "5%"
+    marginLeft: "5%",
+    marginTop: "50%",
+    marginBottom: "20px"
 };
 
 class MapContainer extends Component {
@@ -24,7 +25,7 @@ class MapContainer extends Component {
                 name : "",
                 latitude : "",
                 longitude: "",
-                _id: null,
+                id: null,
         
         }
     }
@@ -93,6 +94,8 @@ class MapContainer extends Component {
 
 
             const trailsParsed = await response.json();
+            console.log(trailsParsed.trails[1])
+
                 this.setState({
                 trails: trailsParsed.trails,
                 
@@ -132,9 +135,10 @@ class MapContainer extends Component {
 
     deleteTrail = async (id, e) =>{
         e.preventDefault();
-
+        console.log(id)
+        console.log("deleting trail")
         try{
-            const deleteTrail = await fetch ("http://localhost:9000/api/v1/trails" + id, {
+            const deleteTrail = await fetch ("http://localhost:9000/api/v1/trails/" + id, {
                 method: "DELETE",
                 credentials: "include"
             });
@@ -142,7 +146,8 @@ class MapContainer extends Component {
             const parsedResponse = await deleteTrail.json()
 
             this.setState({
-                trails: this.state.trails.filter((trail) => trail._id !== id)
+                trails: this.state.trails.filter((trail) => trail.id !== id),
+                
             })
             console.log(parsedResponse)
         } catch (err){
@@ -158,20 +163,9 @@ class MapContainer extends Component {
     // }
 
     render() {
-
-        const trailList = this.state.trails.map((trail) =>
-            <div key={trail.id} className = "traillist">
-                <h4>{trail.name} </h4>
-                <button>Delete</button>
-                <button>Edit</button>
-
-            </div>)
-
-
         return (
             <div>
-                
-                <form>
+                 <form>
                     <button style={{
                         fontSize: 24,
                         display: "block",
@@ -185,7 +179,7 @@ class MapContainer extends Component {
                 </form>
                 
                    
-                <Map className="map"
+                {/* <Map className="map"
                     google={this.props.google}
                     zoom={10}
                     style={mapStyles}
@@ -193,17 +187,10 @@ class MapContainer extends Component {
                         lat: 39.7392,
                         lng: -104.9903
                     } 
-            } 
-             />
-                
-
-              
-                    
-                
-                
-                <AddTrail addTrail = {this.addTrail}/>
+            } />                 */}
                 <TrailList trails = {this.state.trails} deleteTrail={this.deleteTrail} showModal = {this.showModal}/>
                 {this.state.showModal ? <EditTrail handleEditFormInput = {this.handleEditFormInput} trailToEdit={this.state.trailToEdit} closeModelAndUpdate={this.closeModelAndUpdate}/> : null }
+                <AddTrail addTrail = {this.addTrail}/>
             </div>
 
         )

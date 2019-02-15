@@ -18,12 +18,8 @@ class App extends Component {
     if (isLoggedIn) {
       return (
         <div>
-
-
           <Navbar />
-          
-              <GoogleApiWrapper />
-            
+          <GoogleApiWrapper />
         </div>
       )
     }

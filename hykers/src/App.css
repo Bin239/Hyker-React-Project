@@ -6,14 +6,8 @@ body {
   background-color: #8ac7d8
 }
 .map {
-  margin-top : 20px;
-  display: block
+  margin-top : 50px;
   
-}
-.chatspace {
-  height: 30px;
-  width: 100%;
-  margin-top: 80%
 }
 
 .searchfield {
@@ -23,15 +17,12 @@ body {
 .wrapper {
   display: flex
 }
-.maps {
-  display: 0 0 50%
-}
+
 
 
 .traillist{
   float: right;
-  border: #282c34;
-  margin-left: 50%
+  display: block
 }
 
 .navbar {
