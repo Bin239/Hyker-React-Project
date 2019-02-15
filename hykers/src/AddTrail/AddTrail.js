@@ -28,6 +28,7 @@ handleChange =(e) => {
                 Trail Name : <input type = "text" name = "name" onChange = {this.handleChange}></input>
                 Latitude: <input type = "text" name = "name" onChange = {this.handleChange}></input>
                 Longitude : <input type = "text"></input>
+                <button type = "submit">Submit</button>
 
 
             </form>
